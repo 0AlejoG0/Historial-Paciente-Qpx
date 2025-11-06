@@ -7,13 +7,17 @@ El sistema permite **listar** y **registrar pacientes** en una base de datos, ut
 
 ## Descripción
 
-La aplicación tiene como objetivo administrar los datos de pacientes, guardando información como su nombre, edad, historial médico, tratamiento y fecha de registro.
+Este proyecto permite registrar, consultar, actualizar y eliminar pacientes de una base de datos usando Spring Boot y JPA.
 
 Por ahora cuenta con las siguientes funciones principales:
 
 * **Listar pacientes:** muestra todos los registros existentes en la base de datos.
 * **Crear paciente:** permite agregar un nuevo paciente y guardar su información en la base de datos.
-
+* **Buscar paciente por ID:** Permite obtener la información de un paciente específico utilizando su identificador único.
+* **Actualizar paciente:** Permite modificar los datos de un paciente existente mediante su ID.
+* **Eliminar paciente:** Elimina permanentemente el registro de un paciente de la base de datos.
+  +
+  
 ---
 
 ## Estructura del proyecto
@@ -37,6 +41,93 @@ El proyecto está dividido en las siguientes capas:
 * **Maven**
 
 ---
+
+## 🚀 Cómo ejecutar el proyecto
+
+1. Clona el repositorio:
+
+   ```bash
+   git clone https://github.com/0AlejoG0/Historial-Paciente.git
+   ```
+2. Abre el proyecto en IntelliJ IDEA o VS Code.
+3. Configura tu base de datos en `application.properties`:
+
+   ```
+   spring.datasource.url=jdbc:postgresql://localhost:5432/historial_pacientes
+   spring.datasource.username=postgres
+   spring.datasource.password=tu_contraseña
+   ```
+4. Ejecuta la clase principal:
+
+   ```
+   HistorialApplication.java
+   ```
+5. La API estará disponible en:
+
+   ```
+   http://localhost:8080/historial
+   ```
+
+---
+
+## 🧪 CRUD (Usar con Postman)
+
+### 🟢 Crear un paciente
+
+**POST:** `http://localhost:8080/historial`
+**Body (JSON):**
+
+```json
+{
+  "nombre": "Alejandro García",
+  "edad": 17,
+  "historial": "Sin antecedentes",
+  "tratamiento": "Ninguno",
+  "fechaRegistro": "2025-11-06 14:00:00"
+}
+```
+
+---
+
+### 🟡 Listar todos los pacientes
+
+**GET:** `http://localhost:8080/historial`
+
+---
+
+### 🔵 Buscar paciente por ID
+
+**GET:** `http://localhost:8080/historial/{id}`
+Ejemplo:
+`http://localhost:8080/historial/3`
+
+---
+
+### 🟠 Actualizar paciente
+
+**PUT:** `http://localhost:8080/historial/{id}`
+**Body (JSON):**
+
+```json
+{
+  "nombre": "Alejandro G. Actualizado",
+  "edad": 18,
+  "historial": "Revisado por control",
+  "tratamiento": "Vitaminas",
+  "fechaRegistro": "2025-11-06 16:30:00"
+}
+```
+
+---
+
+### 🔴 Eliminar paciente
+
+**DELETE:** `http://localhost:8080/historial/{id}`
+Ejemplo:
+`http://localhost:8080/historial/4`
+
+---
+
 
 ## Autor
 
