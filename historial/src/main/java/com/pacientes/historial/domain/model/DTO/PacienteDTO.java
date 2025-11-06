@@ -1,9 +1,10 @@
-package com.pacientes.historial.domain.model.dto;
+package com.pacientes.historial.domain.model.DTO;
 
 import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class PacienteDTO {
+
     private String nombre;
     private Integer edad;
     private String historial;
@@ -11,9 +12,7 @@ public class PacienteDTO {
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date fechaRegistro;
-
-    public PacienteDTO() {
-    }
+    public PacienteDTO() {}
 
     public PacienteDTO(String nombre, Integer edad, String historial, String tratamiento, Date fechaRegistro) {
         this.nombre = nombre;
@@ -37,8 +36,9 @@ public class PacienteDTO {
 
     public Date getFechaRegistro() { return fechaRegistro; }
     public void setFechaRegistro(Date fechaRegistro) { this.fechaRegistro = fechaRegistro; }
+
+    public void setId(Long id) {
+    }
 }
-
-
 
 
