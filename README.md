@@ -75,7 +75,7 @@ El proyecto está dividido en las siguientes capas:
 ### 🟢 Crear un paciente
 
 **POST:** `http://localhost:8080/historial`
-**Body (JSON):**
+**Body (JSON O TEXT):**
 
 ```json
 {
@@ -106,7 +106,7 @@ Ejemplo:
 ### 🟠 Actualizar paciente
 
 **PUT:** `http://localhost:8080/historial/{id}`
-**Body (JSON):**
+**Body (UNICAMENTE JSON):**
 
 ```json
 {
